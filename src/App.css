@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+/* App.css */
+/* slick-carousel CSS */
+
+
+
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+@keyframes portfolioAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.animate-portfolio {
+  animation: portfolioAnimation 1s ease-in-out forwards;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Keyframe for the animation */
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* When "Portfolio" is clicked, it will pulse */
+.animate-portfolio {
+  animation: pulseAnimation 1s ease-in-out;
+}
+.image-hover {
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.image-hover:hover {
+  filter: brightness(0.8); /* Darken the image slightly */
+  transform: scale(1.05); /* Slightly scale the image up */
+}
+.download-button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.download-button:hover {
+  background-color: #007bff;
+}
+.footer-link {
+  color: #fff; /* Default color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+.footer-link:hover {
+  color: #ffcc00; /* Color on hover */
 }
